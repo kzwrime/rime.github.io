@@ -1,0 +1,803 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" >
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/kzwrime/kzwrime.github.io/img/favicon.png">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/kzwrime/kzwrime.github.io/img/kunnan.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="霜华">
+  <meta name="keywords" content="">
+  <title>vscode + ssh + c/cpp - 闲云溪月</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/atelier-lakeside-dark.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+  <header style="height: 60vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>闲云溪月</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/shuoshuo2/">
+                <i class="iconfont icon-speakernotes"></i>
+                留言板
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/kzwrime/kzwrime.github.io/img/SloveniaAlps.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-06-22 21:00" pubdate>
+        2020年6月22日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      21
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">vscode + ssh + c/cpp</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="vscode-ssh-ccpp"><a class="markdownIt-Anchor" href="#vscode-ssh-ccpp"></a> vscode + ssh + c/cpp</h1>
+<h2 id="配置公钥"><a class="markdownIt-Anchor" href="#配置公钥"></a> 配置公钥</h2>
+<p>新版（大概是20H?）的windows已经自带了openssh，因而可以直接在cmd / powershell / windows terminal 里使用ssh，为了避免每次都要输入密码的麻烦，先在本地生成ssh的公钥链接 <code>ssh-keygen</code>，如下图，可以看见生成的id_rsa.pub公钥在用户名目录下的<code>.ssh</code>文件夹里，用记事本打开即可查看。</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200622141909653.png" srcset="/img/loading.gif" alt="image-20200622141909653" /></p>
+<p>先短暂得随便用什么工具登录远程服务器，把上面 id_rsa.pub 的内容复制到 ~/.ssh/authorized_keys 中，初次使用可能不熟悉，各种远程终端的复制可以是 <code>ctrl+shift+v</code> 或 <code>shift+insert</code> 或 <code>单击右键</code> 等，例如我使用uusl这个账户登录，就：</p>
+<div class="hljs"><pre><code class="hljs bash">$ nano /home/uusl/.ssh/authorized_keys (使用nano编辑器打开，或者用 vi 等，可能需要sudo)</code></pre></div>
+<p>再例如 root 登录：</p>
+<div class="hljs"><pre><code class="hljs bash">$ nano /root/.ssh/authorized_keys</code></pre></div>
+<p>以后每次本机登录都不用输密码了，方便又安全。为了继续提高安全性可以关闭ssh的密码登录，防止暴力破解，具体流程不赘述。</p>
+<h2 id="配置-vscode"><a class="markdownIt-Anchor" href="#配置-vscode"></a> 配置 vscode</h2>
+<p>在 vscode 中点击插件库图标（形如左下角），搜索 ssh，安装 Remote -SSH，然后点击多出来的远程连接插件，点击设置（齿轮），选择下拉框中路径带有用户名的 config 文件，填写信息如下：</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200622142857736.png" srcset="/img/loading.gif" alt="image-20200622142857736" /><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200622143216524.png" srcset="/img/loading.gif" alt="image-20200622143216524" /></p>
+<div class="hljs"><pre><code class="hljs json"># Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+Host yourname	//你给这个远程的备注名
+    HostName xxx.xxx.xxx.xxx	//你服务器的ip地址
+    User root	//你的登录账号，其实不建议用root，建议使用sudo组里的普通用户</code></pre></div>
+<p>如果你之前没有设置好公钥，这里需要输入密码（可能首次连接会直接弹出错误，一般点击 retry 重试可以成功），点击左边第一个图标，可以打开文件夹/工作区（如果没载于公钥每次都要输入密码 。。。），可以按 ctrl + ~ 打开命令行，总的情况如图（嫌字大/小的可以 <code>ctrl +/-</code>）：</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200622144911736.png" srcset="/img/loading.gif" alt="image-20200622144911736" /></p>
+<p>具体的 vscode 配置和在本地大致相同，可以参考我的另一篇博客的后半部分 <a target="_blank" rel="noopener" href="https://rainrime.top/2020/%E4%B8%80%E6%AC%A1deepin%E5%AE%89%E8%A3%85%E5%8F%8Avscode%E7%9A%84c++%E9%85%8D%E7%BD%AE/%EF%BC%8C%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E6%98%AF%EF%BC%8C%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F%E7%AD%89%E5%A6%82%E6%8D%A2%E8%A1%8C%E7%AC%A6%E5%9C%A8linux%E5%92%8Cwindows%E4%B8%8B%E6%98%AF%E4%B8%8D%E5%90%8C%E7%9A%84%EF%BC%8C%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%AF%BC%E8%87%B4%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99%EF%BC%8C%E6%AD%A4%E6%97%B6%E5%8F%AF%E4%BB%A5%E5%88%A9%E7%94%A8%E8%87%AA%E5%B8%A6%E7%9A%84%E7%94%9F%E6%88%90%E5%A6%82%E7%9B%B4%E6%8E%A5%E5%9C%A8%E4%B8%80%E4%B8%AA">https://rainrime.top/2020/一次deepin安装及vscode的c++配置/，需要注意的是，编码格式等如换行符在linux和windows下是不同的，可能会导致配置文件报错，此时可以利用自带的生成如直接在一个</a> c/cpp 文件下按 F5，会跳出调试文件配置，选第一个即可（其实本来都是和那些一样的。。。）。如果有特殊需求，例如 需要链接指定库，指定头文件，使用c++20等，可以在tasks.json中更改（其实tasks.json就是帮你把编译过程自动化了，参数都在里面）归根到底，只要保证工作区目录下有一个 <code>.vscode</code>文件夹，里面有三个配置文件就ok。</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200622161450907.png" srcset="/img/loading.gif" alt="image-20200622161450907" /></p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200622150038015.png" srcset="/img/loading.gif" alt="image-20200622150038015" /></p>
+<p>如下图可以很清晰得看到编译、运行、调试都是成功的，设置断点后调试器自动调用了 gdb 并图形化输出。（可能debug console 会弹出一堆信息，点回去terminal）</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200622145425987.png" srcset="/img/loading.gif" alt="image-20200622145425987" /></p>
+<h2 id="linux-多用户"><a class="markdownIt-Anchor" href="#linux-多用户"></a> linux 多用户</h2>
+<p>虽然 root 用户很强大很方便，但是全部权限也意味着全部的责任，例如我就不小心手抖毁了用户组 。。。如果你胆大当然也可以 <code>rm -rf /</code> ，为了避免严重犯错，或为了限制他人的权限，我们一般不用 root 账户，而使用普通账户，平时仅仅在一般权限下工作，并通过把它添加到 sudo （超级用户组），需要时再使用 <code>sudo + 命令</code>来临时获取root权限。</p>
+<blockquote>
+<p>以下命令 root 用户执行不需要加 sudo 在前方</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs bash">$ sudo adduser username	// 添加一个username的用户，将自动创建用户、密码、用户信息（可不填）、家目录
+$ sudo visudo	// 用默认编辑器打开sudo缓存区文件，注意不要直接修改 /etc/sudoers ！！！
+$ // 然后在最后一行添加 username ALL=(ALL) ALL , 把你新加的用户名加入到 sudo 用户组
+$ su username   // 切换到这个账户（ctrl d） 退出</code></pre></div>
+<p>然后需要在这个用户的目录下添加 ssh 公钥，如上文所写，以后可以直接如此登录。建议单独开出一个文件夹用来编程。</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200622161751603.png" srcset="/img/loading.gif" alt="image-20200622161751603" /></p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200622165345499.png" srcset="/img/loading.gif" alt="image-20200622165345499" /></p>
+<p>此外，可以顺便学习一下利用 ssh 的 scp 传输，如：在 powershell 中 <code>scp -r C:\Users\kunzh\Documents\programing\STL\Code\mySTL uusl@xxx.xxx.xxx.xxx:/home/uusl/my_prog/</code>上传到上图所示的位置，-r 即为传输目录，需要注意的是，含中文名的路径极有可能不成功（window用户目录下的文件、下载这类不算，windows会自动把他们转文Documents、Download等）</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200622165758951.png" srcset="/img/loading.gif" alt="image-20200622165758951" /></p>
+<p>此外，路径或文件名中有空格需要整体加引号，如果直接使用其他的终端，需要注意windows的路径是反斜杠，而反斜杠有转义符的用法，因此需要变为 <code>\\</code>。</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200622170101992.png" srcset="/img/loading.gif" alt="image-20200622170101992" /></p>
+<p>反正就是坑好多，其实xshell 配套的 xftp 也可以用，相当于远程资源管理器。</p>
+<p>此处顺便摘录 scp 的几条命令：</p>
+<div class="hljs"><pre><code class="hljs bash">scp username@servername:/path/filename /tmp/local_destination	 // 从服务器下载文件
+scp /path/local_filename username@servername:/path  			// 上传本地文件到服务器
+scp -r username@servername:remote_dir/ /tmp/local_dir 			// 从服务器下载整个目录
+scp  -r /tmp/local_dir username@servername:remote_dir  			// 上传目录到服务器</code></pre></div>
+<h2 id="vscode-online"><a class="markdownIt-Anchor" href="#vscode-online"></a> vscode online</h2>
+<p>为了方便你随时随地使用网页就能编程（当然跑集群和GPU密集型爽歪歪），vscode online 也是个好玩的东西，有个浏览器有个 <code>ipad</code>就能编程。</p>
+<div class="hljs"><pre><code class="hljs bash">//尽量不使用 root 账户执行以下命令，便于管理
+curl -fsSL https://code-server.dev/install.sh | sh
+//完成后
+systemctl --user <span class="hljs-built_in">enable</span> --now code-server	//设置开机启动</code></pre></div>
+<p>如果不熟悉<code>systemctl</code>，还需要记住以下几条命令</p>
+<div class="hljs"><pre><code class="hljs bash">systemctl --user restart --now code-server	// 感觉有问题，或者为了改密码、改端口以刷新配置
+systemctl --user status --now code-server	// 查看运行状态、日志等</code></pre></div>
+<p>此时会在当前用户目录 <code>~</code>下创建<code>./.config/config.yaml</code>，修改为：</p>
+<div class="hljs"><pre><code class="hljs yaml"><span class="hljs-attr">bind-addr:</span> <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span><span class="hljs-string">:8080</span>
+<span class="hljs-attr">auth:</span> <span class="hljs-string">password</span>
+<span class="hljs-attr">password:</span> <span class="hljs-string">你想设置的密码，注意复杂度足够</span>
+<span class="hljs-attr">cert:</span> <span class="hljs-literal">false</span></code></pre></div>
+<p>然后就可以在浏览器地址栏输入 <code>xxx.xxx.xxx.xxx:8080</code>(那一段是你的服务器ip，当然如果你做了域名的A记录用域名更好)，需要注意，是否在云服务器提供商处设置了防火墙或组策略，需要手动开启端口（此处以阿里云轻量应用服务器为例，其他大致相同）：</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200622201954320.png" srcset="/img/loading.gif" alt="image-20200622201954320" /></p>
+<p>正常访问页面：</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200622202103923.png" srcset="/img/loading.gif" alt="image-20200622202103923" /></p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200622202211443.png" srcset="/img/loading.gif" alt="image-20200622202211443" /></p>
+<p>注意，插件还需要再装一次，其实只要装 c/c++ 那个。</p>
+<h2 id="onemore-thing"><a class="markdownIt-Anchor" href="#onemore-thing"></a> Onemore Thing</h2>
+<p>理论上应该搭个博客什么的，或者在线游戏（如我的世界服务器）啥的，但为了方便，不用在懵逼的时候继续接触nginx、php、nodejs等等复杂的环境，选择一个最简单的网盘玩玩（装装逼？）还是不错的。</p>
+<p>切换到当前用户目录下<code>cd ~</code>，最好再<code>mkdir cloudreve</code>，避免混乱，再切到该目录下。注意，以下只是网址太长了，只有三行，可以直接复制。</p>
+<div class="hljs"><pre><code class="hljs bash">wget https://github.com/cloudreve/Cloudreve/releases/download/3.1.1/cloudreve_3.1.1_linux_amd64.tar.gz
+tar -zxvf cloudreve_3.1.1_linux_amd64.tar.gz
+./cloudreve</code></pre></div>
+<p>记住输出的管理员账号和密码，然后防火墙放行5212端口，就可以在浏览器访问<code>http://服务器IP:5212</code>进入你的网盘了（再也不用看百度云脸色👀？）</p>
+<p>该网盘功能还挺丰富的，支持云扩容，支持邮箱服务器，支持图床直连等等，可以自己摸索着玩。</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200622204720140.png" srcset="/img/loading.gif" alt="image-20200622204720140" /></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/06/markdown%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">markdown 扩展 mermaid</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/06/%E5%9B%BE%E8%AE%BA%E4%B8%AD%E7%9A%84%E9%87%8D%E8%A6%81%E7%AE%97%E6%B3%95/">
+                        <span class="hidden-mobile">图论中的重要算法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          enableQQ: true,
+          boolean: true,
+          app_id: "iAgkjaR2s2ws1XXtS5sVxE7H-MdYXbMMI",
+          app_key: "vKka6XRlblVTkbKz8jLXx6EQ",
+          placeholder: "你是来自评论区的小惊喜吗 ...",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+            // 设置Bilibili表情包地址
+            emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+            // 表情title和图片映射
+            emojiMaps: {
+            "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+            "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+            "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+            "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+            "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+            "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+            "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+            "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+            "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+            "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+            "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+            "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+            "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+            "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+            "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+            "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+            "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+            "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+            "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+            "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+            "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+            "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+            "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+            "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+            "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+            "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+            "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+            "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+            "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+            "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+            "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+            "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+            "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+            "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+            "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+            "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+            "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+            "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+            "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+            "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+            "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+            "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+            "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+            "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+            "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+            "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+            "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+            "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+            "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+            "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                // ... 更多表情
+            }
+        });
+      });
+    }
+    createObserver(loadValine, 'vcomments');
+  </script>
+      <style>
+        #vcomments textarea {
+            box-sizing: border-box;
+            background: url("https://cdn.jsdelivr.net/gh/kzwrime/kzwrime.github.io/img/v2-f3d5c26e7ac0da80ee72b6dc178d6aa1_b005.gif") 100% 100% no-repeat;
+        }
+      </style>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://cdn.jsdelivr.net/gh/kzwrime/kzwrime.github.io/img/371905140-ROBOT-WAVING-400px-unscreen(1).gif" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:200px; height:200px;" >
+    </div>
+  </div>
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+        <br>
+        <span>©2019 - 2020 By</span>
+        <a href="https://github.com/rainrime" target="_blank" rel="nofollow noopener"><span>Rainrime</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 6,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "vscode + ssh + c/cpp&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "❡"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript">
+      //定义获取词语下标
+      var a_idx = 0;
+      jQuery(document).ready(function ($) {
+        //点击body时触发事件
+        $("body").click(function (e) {
+          //需要显示的词语
+          var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+          //设置词语给span标签
+          var $i = $("<span/>").text(a[a_idx]);
+          //下标等于原来下标+1  余 词语总数
+          a_idx = (a_idx + 1) % a.length;
+          //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+          //获取x和y的指针坐标
+          var x = e.pageX, y = e.pageY;
+          //在鼠标的指针的位置给$i定义的span标签添加css样式
+          $i.css({
+            "z-index": 999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": rand_color()
+          });
+          // 随机颜色
+          function rand_color() {
+            return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+          }
+          //在body添加这个标签
+          $("body").append($i);
+          //animate() 方法执行 CSS 属性集的自定义动画。
+          //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+          //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+          $i.animate({
+            //将原来的位置向上移动180
+            "top": y - 180,
+            "opacity": 0
+            //1500动画的速度
+          }, 1500, function () {
+            //时间到了自动删除
+            $i.remove();
+          });
+        });
+      })
+      ;
+    </script>
+  
+
+
+
+  <script>(function (i, s, o, g, r, a, m) {
+      i['DaoVoiceObject'] = r;
+      i[r] = i[r] ||
+        function () {
+          (i[r].q = i[r].q || []).push(arguments);
+        };
+      i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      a.charset = 'utf-8';
+      m.parentNode.insertBefore(a, m);
+    })(window, document, 'script', ('https:' === document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/244aa65c.js", 'daovoice');
+    daovoice('init', {
+      app_id: "244aa65c",
+    });
+    daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

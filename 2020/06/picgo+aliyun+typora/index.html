@@ -1,0 +1,806 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" >
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/kzwrime/kzwrime.github.io/img/favicon.png">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/kzwrime/kzwrime.github.io/img/kunnan.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="霜华">
+  <meta name="keywords" content="">
+  <title>markdownn 图床 (typora+aliyun+picgo) - 闲云溪月</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/atelier-lakeside-dark.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+  <header style="height: 60vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>闲云溪月</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/shuoshuo2/">
+                <i class="iconfont icon-speakernotes"></i>
+                留言板
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/kzwrime/kzwrime.github.io/img/SloveniaAlps.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-06-03 17:00" pubdate>
+        2020年6月3日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      14
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">markdownn 图床 (typora+aliyun+picgo)</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="markdownn-图床-typoraaliyunpicgo"><a class="markdownIt-Anchor" href="#markdownn-图床-typoraaliyunpicgo"></a> markdownn 图床 (typora+aliyun+picgo)</h1>
+<p>实时渲染的typora已然给我们带来了良好的markdown编辑体验，但md文档中的图片如何存储一直是个问题。默认使用的绝对路径在图片转移位置后，或者单独转移md文档后便无法访问，难以分享/拷贝md文档；即时开启自动复制到相对指定路径，也要每次拷贝图片文件夹，且依旧无法直接分享/渲染成html分享。使用在线图床便能解决这一问题，把文章的图片存到云上，无论何处都能访问。免费的图床不少，但不少已经关闭/限制访问了，而获取的链接也并非永久有效，平日里看到不少文章图片消失掉或许就是这些原因。本文便以阿里云存储作为存储库，安全、便宜、方便得使用图床。</p>
+<h2 id="阿里云oss构建"><a class="markdownIt-Anchor" href="#阿里云oss构建"></a> 阿里云oss构建</h2>
+<p>首先当然是简单的阿里云注册，访问阿里云官网注册即可，支持支付宝登录，就不细说了。</p>
+<ol>
+<li>
+<p>选择对象存储oss</p>
+ <img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/tcali001.png" srcset="/img/loading.gif" alt="tcali001" style="zoom:50%;" />
+</li>
+<li>
+<p>点击折扣套餐</p>
+ <img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/tcali002.png" srcset="/img/loading.gif" alt="tcali002" style="zoom: 50%;" />
+</li>
+<li>
+<p>购买折扣套餐，点击立即购买，5块钱/半年/40GB还挺实惠的。</p>
+ <img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/tcali003.png" srcset="/img/loading.gif" alt="tcali003" style="zoom: 80%;" />
+</li>
+<li>
+<p>开通对象存储服务，如果没有选项，返回主界面再点击对象存储oss，到图2选择立即开通，然后选择创建bucket。</p>
+ <img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/tcali004.png" srcset="/img/loading.gif" alt="tcali004" style="zoom:75%;" />
+</li>
+<li>
+<p>按需选择bucket内容，尽量选择靠近的区域，记得读写权限改为共有读，不然存储内容无法直接访问。</p>
+ <img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/tcali005.png" srcset="/img/loading.gif" alt="tcali005" style="zoom:75%;" />
+</li>
+<li>
+<p>鼠标放到头像上，在悬浮出的小窗口选择AccessKey管理。</p>
+ <img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/tcali006.png" srcset="/img/loading.gif" alt="tcali006" style="zoom:75%;" />
+</li>
+<li>
+<p>选择创建AccessKey，出现手机验证界面，按要求操作即可。也可创建子用户的，大致相同，这里以直接创建全局的为例（这个新页面忘了关黑暗模式。。。担待一下）</p>
+ <img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/tcali007.png" srcset="/img/loading.gif" alt="tcali007" style="zoom:80%;" />
+</li>
+<li>
+<p>选择保存AK信息，建议在不会丢的地方再用txt存储下，再配合截图备份。</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/tcali008.png" srcset="/img/loading.gif" alt="tcali008" /></p>
+</li>
+<li>
+<p>这个页面就是一些基本信息了，留着这个页面，阿里云存储的配置到此结束。</p>
+ <img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/tcali009.png" srcset="/img/loading.gif" alt="tcali009" style="zoom:67%;" />
+</li>
+</ol>
+<h2 id="picgo下载安装"><a class="markdownIt-Anchor" href="#picgo下载安装"></a> PicGo下载安装</h2>
+<p>偷懒的用户可以直接在typora的偏好设置中下载安装命令行版，如图，选择下载或更新，完成后打开配置文件，根据上文的对应关系，按照下面的格式填写即可。当然国内用户可能觉得这个下载速度怀疑人生（4KB/s），还是另择他路装PicGo的桌面版，图形化操作还能查看已上传形成的相册。</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/typora001.png" srcset="/img/loading.gif" alt="typora001" /></p>
+<div class="hljs"><pre><code class="hljs json">&#123;
+  <span class="hljs-attr">&quot;picBed&quot;</span>: &#123;
+    <span class="hljs-attr">&quot;uploader&quot;</span>: <span class="hljs-string">&quot;aliyun&quot;</span>,
+    <span class="hljs-attr">&quot;aliyun&quot;</span>: &#123;
+    <span class="hljs-attr">&quot;accessKeyId&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+    <span class="hljs-attr">&quot;accessKeySecret&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+    <span class="hljs-attr">&quot;bucket&quot;</span>: <span class="hljs-string">&quot;&quot;</span>, 		<span class="hljs-comment">// 存储空间名</span>
+    <span class="hljs-attr">&quot;area&quot;</span>: <span class="hljs-string">&quot;&quot;</span>, 		<span class="hljs-comment">// 存储区域代号</span>
+    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;img/&quot;</span>, 	<span class="hljs-comment">// 存储路径</span>
+     <span class="hljs-attr">&quot;customUrl&quot;</span>: <span class="hljs-string">&quot;&quot;</span>, 	<span class="hljs-comment">// 记得加 http:// 或 https://</span>
+     <span class="hljs-attr">&quot;options&quot;</span>: <span class="hljs-string">&quot;&quot;</span> 		<span class="hljs-comment">// 后缀处理参数，可留空</span>
+    &#125;
+  &#125;,
+  <span class="hljs-attr">&quot;picgoPlugins&quot;</span>: &#123;&#125;
+&#125;</code></pre></div>
+<p>PicGo的项目网站在此，<a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/zh/guide/#%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0">https://picgo.github.io/PicGo-Doc/zh/guide/#%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0</a>，按照其指引跳转到下载页面，这时如果直接下载还是很慢（毕竟还是被限速的Github），可以右键要下载的文件（windows的exe或mac的dmg，linux的不可能不会了），选择复制链接地址，粘贴到下面的代下载网站http://g.widyun.com/ 或者 <a target="_blank" rel="noopener" href="https://shrill-pond-3e81.hunsh.workers.dev/">https://shrill-pond-3e81.hunsh.workers.dev/</a> ，如果你前面真的直接下载了几个小时，这个几秒下完的代理实在是感天动地。</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200614233714588.png" srcset="/img/loading.gif" alt="image-20200614233714588" /></p>
+<p>下载完如正常软件一样安装，选择目标时记得复制一下路径。</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/tcali011.png" srcset="/img/loading.gif" alt="tcali011" /></p>
+<p>进入软件后按照上文阿里云oss构建阶段的各个截图，对应填写</p>
+<img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/tcali013.png" srcset="/img/loading.gif" alt="tcali013"  />
+<h2 id="typora-配置"><a class="markdownIt-Anchor" href="#typora-配置"></a> Typora 配置</h2>
+<p>回到typora的偏好设置界面，把刚刚的路径复制过来（可以按win+v调出剪贴板，查看最近复制内容，单击即可复制）。</p>
+<img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/typora002.png" srcset="/img/loading.gif" alt="typora002"  />
+<p>然后点击验证图片上传选项，弹出提示验证成功，不成功的回去检查一下PicGo的设置。</p>
+<img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/tcali015.png" srcset="/img/loading.gif" alt="tcali015"  />
+<p>要获得复制入图片自动上传功能，还需要调整一下，前两个勾可以都打上，不过如果引用别人没有防盗链的图片的话其实直接使用原网址也可，第二个选项就看心情了。</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/typora003.png" srcset="/img/loading.gif" alt="typora003" /></p>
+<p>现在可以插入图片试一下了，可能需要把全部typora窗口都关掉再打开，例如上面这张图片，会直接变成后面的阿里云开头的链接。</p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200615233416398.png" srcset="/img/loading.gif" alt="image-20200615233416398" /></p>
+<p><img src="https://tuchuangrrr.oss-cn-shenzhen.aliyuncs.com/img/image-20200615233622922.png" srcset="/img/loading.gif" alt="image-20200615233622922" /></p>
+<p>然后就可以愉快地在markdown中插入图片而不用麻烦这麻烦那的了，记得每次都要开启picgo，不时要上阿里云看看收费情况，交一下流量费和给套餐续期。其实上传的图片如果较大还是建议缩分辨率+压缩，尤其是给像博客文章这样公开访问的节约一下流量，具体工具就下次再介绍了。当然想白嫖的还可以使用sm.ms图床、Github图床等，前者免费版无永久链接，而且承载不了一下加载五六张以上的并发，不利于多图的文章访问，后者空间有限仅作为辅助。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/others/">others</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/markdown/">markdown</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%9B%BE%E5%BA%8A/">图床</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/06/More%20exercise%2001/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">More exercise 01</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/06/photos%20during%20WHU/">
+                        <span class="hidden-mobile">武大忽悠-美景</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          enableQQ: true,
+          boolean: true,
+          app_id: "iAgkjaR2s2ws1XXtS5sVxE7H-MdYXbMMI",
+          app_key: "vKka6XRlblVTkbKz8jLXx6EQ",
+          placeholder: "你是来自评论区的小惊喜吗 ...",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+            // 设置Bilibili表情包地址
+            emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+            // 表情title和图片映射
+            emojiMaps: {
+            "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+            "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+            "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+            "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+            "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+            "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+            "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+            "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+            "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+            "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+            "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+            "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+            "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+            "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+            "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+            "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+            "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+            "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+            "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+            "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+            "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+            "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+            "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+            "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+            "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+            "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+            "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+            "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+            "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+            "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+            "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+            "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+            "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+            "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+            "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+            "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+            "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+            "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+            "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+            "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+            "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+            "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+            "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+            "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+            "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+            "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+            "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+            "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+            "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+            "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                // ... 更多表情
+            }
+        });
+      });
+    }
+    createObserver(loadValine, 'vcomments');
+  </script>
+      <style>
+        #vcomments textarea {
+            box-sizing: border-box;
+            background: url("https://cdn.jsdelivr.net/gh/kzwrime/kzwrime.github.io/img/v2-f3d5c26e7ac0da80ee72b6dc178d6aa1_b005.gif") 100% 100% no-repeat;
+        }
+      </style>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://cdn.jsdelivr.net/gh/kzwrime/kzwrime.github.io/img/371905140-ROBOT-WAVING-400px-unscreen(1).gif" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:200px; height:200px;" >
+    </div>
+  </div>
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+        <br>
+        <span>©2019 - 2020 By</span>
+        <a href="https://github.com/rainrime" target="_blank" rel="nofollow noopener"><span>Rainrime</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 6,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "markdownn 图床 (typora+aliyun+picgo)&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "❡"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript">
+      //定义获取词语下标
+      var a_idx = 0;
+      jQuery(document).ready(function ($) {
+        //点击body时触发事件
+        $("body").click(function (e) {
+          //需要显示的词语
+          var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+          //设置词语给span标签
+          var $i = $("<span/>").text(a[a_idx]);
+          //下标等于原来下标+1  余 词语总数
+          a_idx = (a_idx + 1) % a.length;
+          //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+          //获取x和y的指针坐标
+          var x = e.pageX, y = e.pageY;
+          //在鼠标的指针的位置给$i定义的span标签添加css样式
+          $i.css({
+            "z-index": 999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": rand_color()
+          });
+          // 随机颜色
+          function rand_color() {
+            return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+          }
+          //在body添加这个标签
+          $("body").append($i);
+          //animate() 方法执行 CSS 属性集的自定义动画。
+          //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+          //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+          $i.animate({
+            //将原来的位置向上移动180
+            "top": y - 180,
+            "opacity": 0
+            //1500动画的速度
+          }, 1500, function () {
+            //时间到了自动删除
+            $i.remove();
+          });
+        });
+      })
+      ;
+    </script>
+  
+
+
+
+  <script>(function (i, s, o, g, r, a, m) {
+      i['DaoVoiceObject'] = r;
+      i[r] = i[r] ||
+        function () {
+          (i[r].q = i[r].q || []).push(arguments);
+        };
+      i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      a.charset = 'utf-8';
+      m.parentNode.insertBefore(a, m);
+    })(window, document, 'script', ('https:' === document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/244aa65c.js", 'daovoice');
+    daovoice('init', {
+      app_id: "244aa65c",
+    });
+    daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>
